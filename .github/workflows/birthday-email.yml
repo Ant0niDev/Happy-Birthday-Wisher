@@ -29,11 +29,3 @@ jobs:
           EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
         run: python ./main.py
-
-      - name: Commit and Push Changes
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: Updated code
-          commit_user_name: Antoni Luna [Github Actions]
-          commit_user_email: primefire0.3@gmail.com
-          commit_author: Ant0niDev

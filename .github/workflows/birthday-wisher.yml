@@ -2,9 +2,7 @@ name: Birthday Wisher
 
 on:
   schedule:
-    # Ejecuta todos los días a las 12:00 UTC
-    - cron: "0 12 * * *"
-
+    - cron: '0 12 * * *'
   workflow_dispatch:
 
 jobs:
@@ -18,15 +16,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
+          python-version: '3.12'
 
       - name: Install dependencies
-        run: |
-          pip install pandas
+        run: pip install pandas
 
       - name: Run Birthday Wisher
         env:
           EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-        run: |
-          python main.py
+        run: python main.py
